@@ -24,5 +24,14 @@ namespace USP_Congig_generator
         {
             InitializeComponent();
         }
+
+        private void Clipboard_Weapons_Click(object sender, RoutedEventArgs e)
+        {
+            Clipboard.SetText(Output_cfgweapons.Text);
+        }
+        private void Clipboard_Vehicles_Click(object sender, RoutedEventArgs e)
+        {
+            Clipboard.SetText(Output_cfgvehicles.Text);
+        }
     }
 }

@@ -5,8 +5,37 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:USP_Congig_generator"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        
+        ResizeMode="NoResize"
+        Title="MainWindow" Width="800" MinHeight="530" MinWidth="800" Height="530">
+    <Grid Margin="0,0,0,39">
+        <Label Content="Uniform - Type" HorizontalAlignment="Left" Height="26" Margin="10,16,0,0" VerticalAlignment="Top" Width="160"/>
+        <ComboBox HorizontalAlignment="Left" Height="25" Margin="10,42,0,0" VerticalAlignment="Top" Width="179">
+            <ComboBoxItem Content="G3C Set" IsSelected="True"/>
+            <ComboBoxItem Content="Overwhite"/>
+            <ComboBoxItem Content="PCU"/>
+            <ComboBoxItem Content="Soft Shell"/>
+            <ComboBoxItem Content="T-Shirt"/>
+        </ComboBox>
+        <Label Content="Uniform - Shirt" HorizontalAlignment="Left" Height="26" Margin="10,77,0,0" VerticalAlignment="Top" Width="160"/>
+        <TextBox x:Name="uniform_shirt" HorizontalAlignment="Left" Height="21" Margin="10,103,0,0" TextWrapping="Wrap" Text="\usp_gear_body\model\tx\usp_g3c_shirt_mc_co.paa" VerticalAlignment="Top" Width="373"/>
+        <Label x:Name="Uniform_Pant_Label" Content="Uniform - Pants" HorizontalAlignment="Left" Height="26" Margin="10,129,0,0" VerticalAlignment="Top" Width="160"/>
+        <TextBox x:Name="Uniform_Pant" HorizontalAlignment="Left" Height="21" Margin="10,155,0,0" TextWrapping="Wrap" Text="\usp_gear_body\model\tx\usp_g3c_pants_mc_co.paa" VerticalAlignment="Top" Width="373"/>
+        <TextBox x:Name="Uniform_Pant_Copy" HorizontalAlignment="Left" Height="21" Margin="10,208,0,0" TextWrapping="Wrap" Text="\USP_Gear_Core\data\id\flag\aus_ir_mc_co.paa" VerticalAlignment="Top" Width="373"/>
+        <Label x:Name="Uniform_Pant_Label_Copy" Content="Flag - Left" HorizontalAlignment="Left" Height="26" Margin="10,182,0,0" VerticalAlignment="Top" Width="160"/>
+        <TextBox x:Name="Uniform_Pant_Copy1" HorizontalAlignment="Left" Height="21" Margin="10,265,0,0" TextWrapping="Wrap" Text="\USP_Gear_Core\data\id\flag\aus_ir_mc_co.paa" VerticalAlignment="Top" Width="373"/>
+        <Label x:Name="Uniform_Pant_Label_Copy1" Content="Flag - Right" HorizontalAlignment="Left" Height="26" Margin="10,239,0,0" VerticalAlignment="Top" Width="160"/>
+        <CheckBox x:Name="Uniform_Shoe_Check" Content="Custom Shoes?" HorizontalAlignment="Left" Margin="10,324,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="Uniform_Shoe_Label" Content="Uniform - Shoes" HorizontalAlignment="Left" Height="26" Margin="10,298,0,0" VerticalAlignment="Top" Width="160"/>
+        <TextBox x:Name="Uniform_Shoe" HorizontalAlignment="Left" Height="21" Margin="10,344,0,0" TextWrapping="Wrap" Text="\usp_gear_body\model\tx\usp_g3c_shirt_mc_co.paa" VerticalAlignment="Top" Width="373" IsEnabled="{Binding ElementName=Uniform_Shoe_Check, Path=IsChecked}" />
+        <Label Content="CfgWeapons" HorizontalAlignment="Left" Height="26" Margin="410,10,0,0" VerticalAlignment="Top" Width="160"/>
+        <Label Content="CfgVehicles" HorizontalAlignment="Left" Height="26" Margin="410,239,0,0" VerticalAlignment="Top" Width="160"/>
+        <Button x:Name="generate" Content="Generate" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="151,414,0,0" Height="25"/>
+        <CheckBox x:Name="Option_ParentClasses" Content="Include Parent Classes" HorizontalAlignment="Left" Margin="116,394,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="Output_cfgweapons" HorizontalAlignment="Left" Margin="410,36,0,0" TextWrapping="Wrap" Text="output..." VerticalAlignment="Top" Height="185" Width="364" IsReadOnly="True" />
+        <TextBox x:Name="Output_cfgvehicles" HorizontalAlignment="Left" Margin="410,265,0,0" TextWrapping="Wrap" Text="output..." VerticalAlignment="Top" Height="185" Width="364" IsReadOnly="True" />
+        <TextBox x:Name="Class_Extension" HorizontalAlignment="Left" Height="25" Margin="209,42,0,0" TextWrapping="Wrap" Text="_MC" VerticalAlignment="Top" Width="174"/>
+        <Label Content="Class Extension" HorizontalAlignment="Left" Height="26" Margin="209,16,0,0" VerticalAlignment="Top" Width="160"/>
+        <Button x:Name="Clipboard_Vehicles" Content="Copy" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="692,422,0,0" Height="25"  Click="Clipboard_Vehicles_Click"/>
+        <Button x:Name="Clipboard_Weapons" Content="Copy" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="692,191,0,0" Height="25" Click="Clipboard_Weapons_Click"/>
     </Grid>
 </Window>
