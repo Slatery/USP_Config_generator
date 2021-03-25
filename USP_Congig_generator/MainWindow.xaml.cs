@@ -108,7 +108,7 @@ namespace USP_Congig_generator
             RESPONSE.TEXTURE_RESPONSE = TEXTURE_LIST;
             return RESPONSE;
         }
-        public String Generate_G3C_Weapon_Classes(List<string> CLASS_LIST,  String SHIRT_TEXTURE, String PANT_TEXTURE, String EXTENSION, String NAME)
+        public String Generate_G3C_Weapon_Classes(List<string> CLASS_LIST,  String SHIRT_TEXTURE, String PANT_TEXTURE, String EXTENSION, String NAME, String INV_IMAGE)
         {
             String[] CLASS_ARR = CLASS_LIST.ToArray();
             String RESPONSE = "";
@@ -132,7 +132,7 @@ namespace USP_Congig_generator
                 RESPONSE = RESPONSE + "    scope = 2;\n";
                 RESPONSE = RESPONSE + "    scopeArsenal = 2;\n";
                 RESPONSE = RESPONSE + "    displayName = \"[USP] Crye G3C"+ EXTRAS+"("+NAME+")\";\n";
-                RESPONSE = RESPONSE + "    picture = \""+ Inventory_Icon.Text+"\";\n";
+                RESPONSE = RESPONSE + "    picture = \""+ INV_IMAGE + "\";\n";
                 RESPONSE = RESPONSE + "    hiddenSelectionsTextures[] = { \"" + SHIRT_TEXTURE + "\", \"" + PANT_TEXTURE + "\" };\n";
 
                 RESPONSE = RESPONSE + "    class ItemInfo : UniformItem\n";
@@ -147,7 +147,7 @@ namespace USP_Congig_generator
             }
             return RESPONSE;
         }
-        public String Generate_G3C_Vehicle_Classes(List<string> CLASS_LIST, List<string> TEXTURE_LIST, String SHIRT_TEXTURE, String PANT_TEXTURE, String SHOE_TEXTURE, String FLAG_LEFT, String FLAG_RIGHT, String EXTENSION, String NAME)
+        public String Generate_G3C_Vehicle_Classes(List<string> CLASS_LIST, List<string> TEXTURE_LIST, String SHIRT_TEXTURE, String PANT_TEXTURE, String SHOE_TEXTURE, String FLAG_LEFT, String FLAG_RIGHT, String EXTENSION, String NAME, String INV_IMAGE)
         {
             String[] CLASS_ARR = CLASS_LIST.ToArray();
             String[] TEXTURE_ARR = TEXTURE_LIST.ToArray();
@@ -175,7 +175,7 @@ namespace USP_Congig_generator
                 RESPONSE = RESPONSE + "    author = \"UnderSiege Productions\";\n";
                 RESPONSE = RESPONSE + "    displayName = \"[USP] Crye G3C" + EXTRAS + "(" + NAME + ")\";\n";
                 RESPONSE = RESPONSE + "    uniformClass = \"" + CLASS_ARR[i] + EXTENSION + "\";\n";
-                RESPONSE = RESPONSE + "    picture = \"" + Inventory_Icon.Text + "\";\n";
+                RESPONSE = RESPONSE + "    picture = \"" + INV_IMAGE + "\";\n";
                 RESPONSE = RESPONSE + "    hiddenSelectionsTextures[] = {\""+SHIRT_TEXTURE+"\",\""+PANT_TEXTURE+"\""+GLOVES_TEXTURE+",\""+SHOE_TEXTURE+"\",\"\",\"\",\"\",\""+FLAG_LEFT+"\",\""+FLAG_RIGHT+"\",\"\",\"\",\"\"};";
                 RESPONSE = RESPONSE + "};\n";
             }
@@ -191,6 +191,7 @@ namespace USP_Congig_generator
             String UNIFORM_SHOE = Uniform_Shoe.Text;
             String L_FLAG_PATH = Flag_Left.Text;
             String R_FLAG_PATH = Flag_Right.Text;
+            String INV_IMAGE = Inventory_Icon.Text;
             List<String> CLASS_LIST = new List<string>();
             List<String> TEXTURE_LIST = new List<string>();
             String WEAPONS_OUTPUT = "";
@@ -200,8 +201,8 @@ namespace USP_Congig_generator
                 ClassResponse CLASS_RESPONSE = Generate_G3_Classes();
                 CLASS_LIST = CLASS_RESPONSE.CLASS_RESPONSE;
                 TEXTURE_LIST = CLASS_RESPONSE.TEXTURE_RESPONSE;
-                WEAPONS_OUTPUT = Generate_G3C_Weapon_Classes(CLASS_LIST, SHIRT_PATH, PANT_PATH, EXTENSION, NAME);
-                VEHICLES_OUTPUT = Generate_G3C_Vehicle_Classes(CLASS_LIST, TEXTURE_LIST, SHIRT_PATH, PANT_PATH, UNIFORM_SHOE, L_FLAG_PATH, R_FLAG_PATH, EXTENSION, NAME);
+                WEAPONS_OUTPUT = Generate_G3C_Weapon_Classes(CLASS_LIST, SHIRT_PATH, PANT_PATH, EXTENSION, NAME, INV_IMAGE);
+                VEHICLES_OUTPUT = Generate_G3C_Vehicle_Classes(CLASS_LIST, TEXTURE_LIST, SHIRT_PATH, PANT_PATH, UNIFORM_SHOE, L_FLAG_PATH, R_FLAG_PATH, EXTENSION, NAME, INV_IMAGE);
             }
             Output_cfgweapons.Text = WEAPONS_OUTPUT;
             Output_cfgvehicles.Text = VEHICLES_OUTPUT;
