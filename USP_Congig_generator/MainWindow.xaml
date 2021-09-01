@@ -13,15 +13,15 @@
             <ColumnDefinition Width="739*"/>
         </Grid.ColumnDefinitions>
         <Label Content="Uniform - Type" HorizontalAlignment="Left" Height="26" Margin="10,16,0,0" VerticalAlignment="Top" Width="160" Grid.ColumnSpan="2"/>
-        <ComboBox x:Name="Uniform_Set"  HorizontalAlignment="Left" Height="25" Margin="10,42,0,0" VerticalAlignment="Top" Width="127" Grid.ColumnSpan="2">
-            <ComboBoxItem Content="G3C Set" IsSelected="True"/>
-            <!--<ComboBoxItem Content="Overwhite"/>
+        <ComboBox x:Name="Uniform_Set" SelectionChanged="Uniform_Set_SelectionChanged" HorizontalAlignment="Left" Height="25" Margin="10,42,0,0" VerticalAlignment="Top" Width="127" Grid.ColumnSpan="2" SelectedIndex="0">
+            <ComboBoxItem Content="G3C Set"/>
+            <ComboBoxItem Content="T-Shirt"/>
             <ComboBoxItem Content="PCU"/>
             <ComboBoxItem Content="Soft Shell"/>
-            <ComboBoxItem Content="T-Shirt"/>-->
+            <ComboBoxItem Content="Overwhite"/>
         </ComboBox>
         <Label Content="Uniform - Shirt" HorizontalAlignment="Left" Height="26" Margin="10,77,0,0" VerticalAlignment="Top" Width="160" Grid.ColumnSpan="2"/>
-        <TextBox x:Name="Uniform_Shirt" HorizontalAlignment="Left" Height="21" Margin="10,103,0,0" TextWrapping="Wrap" Text="\usp_gear_body\model\tx\usp_g3c_shirt_mc_co.paa" VerticalAlignment="Top" Width="373" Grid.ColumnSpan="2"/>
+        <TextBox x:Name="Uniform_Shirt" HorizontalAlignment="Left" Height="21" Margin="10,103,0,0" TextWrapping="Wrap" Text="\usp_gear_body\model\tx\usp_g3c_shirt_mc_co.paa" VerticalAlignment="Top" Width="373" Grid.ColumnSpan="2" IsEnabled="True"/>
         <Label x:Name="Uniform_Pant_Label" Content="Uniform - Pants" HorizontalAlignment="Left" Height="26" Margin="10,129,0,0" VerticalAlignment="Top" Width="160" Grid.ColumnSpan="2"/>
         <TextBox x:Name="Uniform_Pant" HorizontalAlignment="Left" Height="21" Margin="10,155,0,0" TextWrapping="Wrap" Text="\usp_gear_body\model\tx\usp_g3c_pants_mc_co.paa" VerticalAlignment="Top" Width="373" Grid.ColumnSpan="2"/>
         <TextBox x:Name="Flag_Left" HorizontalAlignment="Left" Height="21" Margin="10,208,0,0" TextWrapping="Wrap" Text="\USP_Gear_Core\data\id\flag\aus_ir_mc_co.paa" VerticalAlignment="Top" Width="373" Grid.ColumnSpan="2"/>
@@ -33,7 +33,7 @@
         <TextBox x:Name="Uniform_Shoe" HorizontalAlignment="Left" Height="21" Margin="10,344,0,0" TextWrapping="Wrap" Text="\usp_gear_body\model\tx\usp_salomon_co.paa" VerticalAlignment="Top" Width="373" IsEnabled="{Binding ElementName=Uniform_Shoe_Check, Path=IsChecked}" Grid.ColumnSpan="2" />
         <Label Content="CfgWeapons" HorizontalAlignment="Left" Height="26" Margin="355.414,10,0,0" VerticalAlignment="Top" Width="160" Grid.Column="1"/>
         <Label Content="CfgVehicles" HorizontalAlignment="Left" Height="26" Margin="355.414,239,0,0" VerticalAlignment="Top" Width="160" Grid.Column="1"/>
-        <Button x:Name="generate" Content="Generate" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="99.414,425,0,0" Height="25" Click="Generate_Click" Grid.Column="1"/>
+        <Button x:Name="generate" Content="Generate" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="253,430,0,0" Height="25" Click="Generate_Click" Grid.Column="1"/>
         <TextBox x:Name="Output_cfgweapons" HorizontalAlignment="Left" Margin="355.414,36,0,0" TextWrapping="Wrap" Text="output..." VerticalAlignment="Top" Height="185" Width="364" IsReadOnly="True" Grid.Column="1" />
         <TextBox x:Name="Output_cfgvehicles" HorizontalAlignment="Left" Margin="355.414,265,0,0" TextWrapping="Wrap" Text="output..." VerticalAlignment="Top" Height="185" Width="364" IsReadOnly="True" Grid.Column="1" />
         <TextBox x:Name="Class_Extension" HorizontalAlignment="Left" Height="25" Margin="99.414,42,0,0" TextWrapping="Wrap" Text="_MC" VerticalAlignment="Top" Width="60" Grid.Column="1"/>
@@ -44,5 +44,6 @@
         <Label Content="Display Name Extension" HorizontalAlignment="Left" Height="26" Margin="199.414,16,0,0" VerticalAlignment="Top" Width="160" Grid.Column="1"/>
         <TextBox x:Name="Inventory_Icon" HorizontalAlignment="Left" Height="21" Margin="10,396,0,0" TextWrapping="Wrap" Text="\usp_gear_body\data\ui\usp_icon_g3c_mc_ca.paa" VerticalAlignment="Top" Width="373" Grid.ColumnSpan="2"/>
         <Label x:Name="Inventory_Icon_Label" Content="Inventory Icon" HorizontalAlignment="Left" Height="26" Margin="10,370,0,0" VerticalAlignment="Top" Width="160" Grid.ColumnSpan="2"/>
+        <CheckBox x:Name="Parent_Classes" Content="Generate Parent Classes" HorizontalAlignment="Left" Margin="10,435,0,0" VerticalAlignment="Top" Grid.ColumnSpan="2"/>
     </Grid>
 </Window>
